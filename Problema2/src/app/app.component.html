@@ -1,0 +1,36 @@
+<h1>Administracion de Articulos</h1>
+
+<style>
+  th{
+    border: 1px black solid;
+  }
+  td{
+    border: 1px black solid;
+  }
+</style>
+
+<table style="border: 1px black solid;">
+  <tr>
+    <th>Codigo</th>
+    <th>Descripcion</th>
+    <th>Precio</th>
+    <th>Borrar</th>
+    <th>Seleccionar</th>
+  </tr>
+  <tr *ngFor="let dato of datos">
+    <td>{{dato["codigo"]}}</td>
+    <td>{{dato["descripcion"]}}</td>
+    <td>{{dato["precio"]}}</td>
+    <td><button (click)="borrar(dato['codigo'])">Borrar</button></td>
+    <td><button (click)="seleccionar(dato['codigo'])">Seleccionar</button></td>
+  </tr>
+</table>
+
+  <p>Codigo: <input type="number" [(ngModel)]="codigo_usuario"></p>
+  <p>Descripcion: <input [(ngModel)]="descripcion_usuario"></p>
+  <p>Precio: <input type="number" [(ngModel)]="precio_usuario"></p>
+  <button (click)="anadir()">Añadir</button>
+  <button (click)="modificar()">Modificar</button>
+  <button (click)="mostrarArray()">Mostrar</button>
+
+
